@@ -1,4 +1,4 @@
-Coding Dojo of Ruby Korea
+Coding Dojo for Ruby Korea
 =========
 
 한국 페이스북 루비 사용자 모임의 코딩도장을 위한 저장소입니다.
