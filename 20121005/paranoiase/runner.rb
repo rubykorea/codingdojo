@@ -1,4 +1,3 @@
-require './lib/self_number/generator'
+require './lib/self_number'
 
-generator = SelfNumber::Generator.new(1, 5000)
-puts generator.sum
+puts (1..5000).self_numbers.sum

@@ -1,0 +1,1 @@
+require './lib/self_number/range'
