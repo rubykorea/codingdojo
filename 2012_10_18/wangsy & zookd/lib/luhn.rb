@@ -1,10 +1,14 @@
 class Array
   def even
-    self.select { |item| self.index(item) % 2 == 1 }
+    arr = []
+    self.each_index { |index| arr << self[index] if index.odd? }
+    arr
   end
 
   def odd
-    self.select { |item| self.index(item) % 2 == 0 }
+    arr = []
+    self.each_index { |index| arr << self[index] if index.even? }
+    arr
   end
 end
 
@@ -16,7 +20,7 @@ class String
     arr = self.to_integer_array.reverse
     even = arr.even.map {|a| (a*2 >= 10) ? a*2 - 9 : a*2 }
     check = (even+arr.odd).inject{|sum,x| sum + x }
-    ( check % 10 ) == 0
+    (( check % 10 ) % 10) == 0
   end
 
   def luhn2 ()
