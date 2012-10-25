@@ -39,7 +39,7 @@ describe Luhn do
 
   describe "#double_every_other" do
     it "7992739871 is 718947691672" do
-      luhn.double_every_other.should == "718947691672"
+      luhn.double_every_other.join.should == "718947691672"
     end
   end
 
