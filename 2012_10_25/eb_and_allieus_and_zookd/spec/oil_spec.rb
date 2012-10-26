@@ -1,14 +1,14 @@
 require "spec_helper"
 
+def price(amount)
+    # params : [period, price] 
 
-def price(galon)
-    rules = [[20, 0.9], [40, 0.8], [0, 0.75]]
+    params = [ [20, 0.90], [40, 0.80], [0, 0.75] ]
 
-    rules.map do |period, price|
-    	quantity = [period, galon].min
-    	quantity = galon if period == 0
-    	galon -= quantity
-    	quantity * price
+    params.map do |period, price|
+        qt = (period != 0) ? [period, amount].min : amount
+        amount -= qt
+        qt * price
     end.inject(&:+)
 end
 
@@ -33,7 +33,6 @@ def notused_function
         return 1800 + 3200 + (galon-60) * 75
     end
 =end
-
 end
 
 describe "#price" do
