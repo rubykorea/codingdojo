@@ -13,13 +13,13 @@ describe AmicablePair do
       pair.sum_table[2].should == 1
       pair.sum_table[3].should == 1
       pair.sum_table[4].should == 3
+      pair.sum_table[9].should == 4
       pair.sum_table[220].should == 284
       pair.sum_table[284].should == 220
     end
   end
 
   describe "#result" do
-    let(:number) {10000}
     it "armicable pair test" do
       AmicablePair.new(10).result.should == []
       AmicablePair.new(1000).result.should == [[220, 284]]
